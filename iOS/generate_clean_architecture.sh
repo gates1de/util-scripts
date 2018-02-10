@@ -1,0 +1,18 @@
+APP_DIRECTORY_PATH=$1
+
+APP_NAME=$(basename $APP_DIRECTORY_PATH)
+
+PROJECT_NAME="$APP_NAME.xcodeproj"
+
+if [ ! -e $APP_DIRECTORY_PATH/$PROJECT_NAME ]; then
+    echo "$PROJECT_NAME does not exists." 
+    exit 1
+fi
+
+mkdir $APP_DIRECTORY_PATH/$APP_NAME/Controller
+mkdir $APP_DIRECTORY_PATH/$APP_NAME/DataStore
+mkdir $APP_DIRECTORY_PATH/$APP_NAME/Model
+mkdir $APP_DIRECTORY_PATH/$APP_NAME/Network
+mkdir $APP_DIRECTORY_PATH/$APP_NAME/Presenter
+mkdir $APP_DIRECTORY_PATH/$APP_NAME/Repository
+mkdir $APP_DIRECTORY_PATH/$APP_NAME/Usecase
